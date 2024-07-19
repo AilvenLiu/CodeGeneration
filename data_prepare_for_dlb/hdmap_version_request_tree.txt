@@ -1,0 +1,13 @@
+```
+HDMapVersionRequest
+├── uuid (string)
+├── format_version (uint64)
+├── hdmap_version (uint64)
+├── tile_ids (string)
+├── sensor_original_ts (SensorTSHeader)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+

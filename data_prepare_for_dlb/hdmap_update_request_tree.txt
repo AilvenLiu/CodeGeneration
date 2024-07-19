@@ -1,0 +1,18 @@
+```
+HDMapUpdateRequest
+├── string uuid
+├── uint32 priority
+├── uint64 timestamp
+├── uint64 expiration_time
+├── uint32 SoCID
+├── uint64 hdmap_version
+├── uint64 tile_id
+├── uint64 format_version
+├── uint64 current_tile_version
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+

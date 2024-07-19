@@ -1,0 +1,23 @@
+```
+CameraDLBProperty
+├── pre_window (int32)
+├── post_window (int32)
+├── camera (string)
+└── datamask_conf (string)
+```
+
+```
+CamDlbEvent
+├── timestamp (int64)
+├── event_type (string)
+├── camera_id (string)
+├── location
+│   ├── latitude (double)
+│   ├── longitude (double)
+│   └── altitude (float)
+└── metadata
+    ├── device_model (string)
+    ├── firmware_version (string)
+    └── battery_level (int32)
+```
+

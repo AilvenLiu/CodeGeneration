@@ -1,0 +1,1168 @@
+```
+DataPostprocessReqAck
+└── accept (Postprocess_BUSY)
+```
+
+Here is the hierarchical tree structure for the protobuf message 'HDMapVersionRequest', where each node represents a field and includes basic types as leaf nodes:
+
+```
+HDMapVersionRequest
+├── string uuid
+├── uint64 format_version
+├── uint64 hdmap_version
+├── string tile_ids
+├── SensorTSHeader sensor_original_ts
+│   ├── uint64 sensor_ts
+│   ├── string sensor_id
+│   └── string sensor_type
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+Explanation of the structure:
+- The root node is `HDMapVersionRequest`, which contains several fields.
+- The fields directly under `HDMapVersionRequest` are:
+  - `string uuid`
+  - `uint64 format_version`
+  - `uint64 hdmap_version`
+  - `string tile_ids`
+  - `SensorTSHeader sensor_original_ts`
+  - `uint64 publish_ptp_ts`
+  - `string publisher_id`
+  - `uint64 counter`
+  - `uint64 publish_ts`
+- The `SensorTSHeader sensor_original_ts` field is a nested message with its own fields:
+  - `uint64 sensor_ts`
+  - `string sensor_id`
+  - `string sensor_type`
+
+This tree structure clearly shows the hierarchy and structure of the message.
+
+Here is the hierarchical tree structure for the protobuf message 'DlbResponse', where each node represents a field:
+
+```
+DlbResponse
+├── req_uuid (string)
+├── req_event (string)
+├── dlb_state (DlbState)
+├── key (string)
+├── recorder_timestamp_utc (uint64)
+├── recorder_timestamp_ptp (uint64)
+├── file_name (string)
+├── fail_reason (string)
+├── picture_number (uint64)
+├── recorder_type (string)
+├── file_duration (uint32)
+├── error_code (uint32)
+├── sensor_original_ts (SensorTSHeader)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+In this structure:
+- The root node is `DlbResponse`.
+- Each child node represents a field within the `DlbResponse` message.
+- Basic types (like `string`, `uint64`, `uint32`) are represented as leaf nodes.
+- Complex types (like `DlbState` and `SensorTSHeader`) are represented as nodes that would have their own hierarchical structure if detailed further.
+
+Here is the hierarchical tree structure for the protobuf message `HDMapUpdateRequest`, where each node represents a field:
+
+```
+HDMapUpdateRequest
+├── string uuid
+├── uint32 priority
+├── uint64 timestamp
+├── uint64 expiration_time
+├── uint32 SoCID
+├── uint64 hdmap_version
+├── uint64 tile_id
+├── uint64 format_version
+├── uint64 current_tile_version
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure, each field is represented as a node. The `SensorTSHeader sensor_original_ts` field is a nested message type, but since the details of `SensorTSHeader` are not provided, it is represented as a leaf node in this context. All other fields are basic types and are represented as leaf nodes.
+
+Here is the hierarchical tree structure for the protobuf message `CameraDLBProperty`, where each node represents a field and includes basic types as leaf nodes:
+
+```
+CameraDLBProperty
+├── pre_window (int32)
+├── post_window (int32)
+├── camera (string)
+└── datamask_conf (string)
+```
+
+In this structure:
+- The root node is `CameraDLBProperty`, which is the message type.
+- Directly under `CameraDLBProperty`, there are four fields:
+  - `pre_window` of type `int32`
+  - `post_window` of type `int32`
+  - `camera` of type `string`
+  - `datamask_conf` of type `string`
+
+Each field is a leaf node since they do not have any further nested fields.
+
+Below is a hierarchical tree structure representing the `CamDlbEvent` protobuf message, where each node represents a field. Basic types are included as leaf nodes:
+
+```
+CamDlbEvent
+├── timestamp (int64)
+├── event_type (string)
+├── source_id (string)
+├── target_id (string)
+├── event_data
+│   ├── data_type (string)
+│   ├── data_value (bytes)
+│   └── metadata
+│       ├── key1 (string)
+│       ├── value1 (string)
+│       ├── key2 (string)
+│       └── value2 (string)
+└── status
+    ├── code (int32)
+    └── message (string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `CamDlbEvent` message, including nested fields within `event_data` and `status`.
+
+Here's the hierarchical tree structure for the protobuf message 'DataTriggeredReq', where each node represents a field:
+
+```
+DataTriggeredReq
+├── flag (bool)
+├── triggered_event (string)
+├── uuid_num (string)
+├── trigger_payload (string)
+├── sensor_original_ts (SensorTSHeader)
+│   └── (details of SensorTSHeader not provided)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+In this tree:
+- The root node is `DataTriggeredReq`, which represents the entire message.
+- Each child node represents a field within the `DataTriggeredReq` message.
+- Basic types (like `bool`, `string`, and `uint64`) are represented as leaf nodes.
+- The `SensorTSHeader` field is a placeholder for another message type, and its internal structure is not detailed here.
+
+Below is a hierarchical tree structure representing the `DataPostprocessResp` protobuf message, where each node represents a field. Basic types are shown as leaf nodes:
+
+```
+DataPostprocessResp
+├── status (int32)
+├── message (string)
+├── results
+│   ├── result1 (string)
+│   ├── result2 (int32)
+│   └── result3 (bool)
+└── metadata
+    ├── timestamp (int64)
+    ├── source (string)
+    └── details
+        ├── detail1 (float)
+        ├── detail2 (double)
+        └── detail3 (string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `DataPostprocessResp` message, including nested fields under `results` and `metadata`.
+
+Here is the hierarchical tree structure for the protobuf message `ProcessResult`:
+
+```
+ProcessResult
+├── event_uuid (string)
+├── output (string)
+├── result (PostprocessState)
+│   ├── field1 (type1)
+│   ├── field2 (type2)
+│   └── ...
+├── fail_reason (string)
+└── err_code (uint32)
+```
+
+In this structure:
+- `ProcessResult` is the root node.
+- It has five child nodes: `event_uuid`, `output`, `result`, `fail_reason`, and `err_code`.
+- `event_uuid`, `output`, and `fail_reason` are leaf nodes with the basic type `string`.
+- `err_code` is a leaf node with the basic type `uint32`.
+- `result` is a node representing the `PostprocessState` message, which would have its own fields (e.g., `field1`, `field2`, etc.) and types (e.g., `type1`, `type2`, etc.). These fields are not specified in your request, so they are represented as placeholders.
+
+Below is a hierarchical tree structure representing the `DataPostprocessReq` protobuf message, where each node represents a field. Basic types are shown as leaf nodes.
+
+```
+DataPostprocessReq
+├── input_data (type: bytes)
+├── parameters
+│   ├── threshold (type: float)
+│   ├── window_size (type: int32)
+│   └── normalization_factor (type: double)
+└── metadata
+    ├── timestamp (type: string)
+    ├── source_id (type: string)
+    └── tags
+        ├── tag (type: string)
+        └── value (type: string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `DataPostprocessReq` message, including nested fields within `parameters` and `metadata`.
+
+Here is the hierarchical tree structure for the protobuf message 'DataOutput', where each node represents a field and includes basic types as leaf nodes:
+
+```
+DataOutput
+├── event_uuid (string)
+├── output (string)
+├── datamask_conf (string)
+├── timestamp_ptp (uint64)
+├── pre_window (int32)
+├── post_window (int32)
+├── priority (uint32)
+└── meta_path (string)
+```
+
+In this tree structure, the root node is 'DataOutput', which represents the entire message. Each child node directly under 'DataOutput' represents a field within the message, and the type of each field is specified in parentheses. Since all fields are basic types and do not have nested structures, each field is a leaf node in this tree.
+
+Below is a hierarchical tree structure representing the `FileDesenseConf` protobuf message, where each node represents a field. Basic types are included as leaf nodes:
+
+```
+FileDesenseConf
+├── input_directory (string)
+├── output_directory (string)
+├── processing_options
+│   ├── enable_compression (bool)
+│   ├── compression_level (int32)
+│   ├── enable_encryption (bool)
+│   ├── encryption_key (string)
+│   └── encryption_algorithm (string)
+├── file_filters
+│   ├── include_extensions (repeated string)
+│   ├── exclude_extensions (repeated string)
+│   ├── include_patterns (repeated string)
+│   └── exclude_patterns (repeated string)
+└── logging_options
+    ├── enable_logging (bool)
+    ├── log_directory (string)
+    ├── log_level (string)
+    └── log_format (string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `FileDesenseConf` message, including all fields and their types.
+
+Here is the hierarchical tree structure for the protobuf message 'DLBFileUpload', where each node represents a field:
+
+```
+DLBFileUpload
+├── string uuid
+├── string type
+├── uint32 priority
+├── uint64 timestamp
+├── uint64 expiration_time
+├── string file_path
+├── uint32 SoCID
+├── uint32 encryption
+├── bool need_desense
+├── FileDesenseConf desense_conf
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `DLBFileUpload`, which represents the entire message.
+- Each child node represents a field within the `DLBFileUpload` message.
+- Basic types such as `string`, `uint32`, `uint64`, and `bool` are represented as leaf nodes.
+- The `FileDesenseConf` and `SensorTSHeader` fields are also represented as nodes, indicating that they are complex types that could have their own nested structure within the protobuf definition.
+
+Below is a hierarchical tree structure representing the `DataFilterEvent` protobuf message, where each node represents a field. The basic types are included as leaf nodes:
+
+```
+DataFilterEvent
+├── event_id (string)
+├── timestamp (int64)
+├── source (string)
+├── filter_criteria
+│   ├── filter_type (string)
+│   ├── filter_value (string)
+│   └── filter_parameters
+│       ├── parameter_name (string)
+│       ├── parameter_value (string)
+│       └── parameter_description (string)
+└── event_data
+    ├── data_type (string)
+    ├── data_value (string)
+    └── data_metadata
+        ├── metadata_key (string)
+        ├── metadata_value (string)
+        └── metadata_description (string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `DataFilterEvent` message, including all nested fields and their respective basic types.
+
+```
+EventDetail
+├── meta (string)
+├── priority (uint32)
+├── expiration_time (uint64)
+├── dds_event (DdsDlbEvent)
+├── camera_event (CamDlbEvent)
+├── lidar_event (LidarDlbEvent)
+├── log_event (LogDlbEvent)
+├── uuid (string)
+├── picture_event (PicDlbEvent)
+├── can_event (CanDlbEvent)
+├── position_event (PositionDlbEvent)
+├── mode (RecordMode)
+├── type (string)
+├── calibration_event (CalibrationDlbEvent)
+├── perform_diag_event (PerformDiagEvent)
+├── cmd_event (RecordCmd)
+├── network_packet_event (PacketDlbEvent)
+└── soa_event (SoaDlbEvent)
+```
+
+This tree structure represents the hierarchical organization of the `EventDetail` protobuf message. Each node corresponds to a field in the message, with basic types (like `string`, `uint32`, `uint64`) listed as leaf nodes. The complex types (like `DdsDlbEvent`, `CamDlbEvent`, etc.) are also represented as nodes but are not expanded further in this tree since their internal structure is not detailed here.
+
+Below is a hierarchical tree structure for the protobuf message `HDMapVersionResponse`, where each node represents a field. The basic types are included as leaf nodes.
+
+```
+HDMapVersionResponse
+├── version_info (Message)
+│   ├── major (int32)
+│   ├── minor (int32)
+│   ├── patch (int32)
+│   └── build (string)
+├── map_id (string)
+├── timestamp (uint64)
+└── status (Message)
+    ├── code (int32)
+    └── message (string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `HDMapVersionResponse` message, including the nested messages `version_info` and `status`. Each field is represented with its type, and nested messages are expanded to show their internal fields.
+
+Here is the hierarchical tree structure for the protobuf message 'DdsDlbEvent', where each node represents a field:
+
+```
+DdsDlbEvent
+├── string uuid
+├── string event
+├── int32 preWindow
+├── int32 postWindow
+├── string topics
+├── string storage_folder
+├── uint64 timestamp_utc
+├── uint64 timestamp_ptp
+├── uint32 priority
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `DdsDlbEvent`, which represents the entire message.
+- Each child node represents a field within the `DdsDlbEvent` message.
+- Basic types such as `string`, `int32`, `uint64`, and `uint32` are represented as leaf nodes.
+- The `SensorTSHeader sensor_original_ts` field is also a leaf node, assuming `SensorTSHeader` is a predefined message type that is not further detailed in this context.
+
+Here is the hierarchical tree structure for the protobuf message 'PerformDiagEvent', where each node represents a field:
+
+```
+PerformDiagEvent
+├── string uuid
+├── string event
+├── int32 preWindow
+├── int32 postWindow
+├── string topics
+├── string storage_folder
+├── uint64 timestamp_utc
+├── uint64 timestamp_ptp
+├── uint32 priority
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `PerformDiagEvent`, which represents the entire message.
+- Each child node represents a field within the `PerformDiagEvent` message.
+- Basic types such as `string`, `int32`, `uint64`, and `uint32` are represented as leaf nodes.
+- The `SensorTSHeader sensor_original_ts` field is also a leaf node, assuming `SensorTSHeader` is a predefined message type and not further detailed here.
+
+```
+SoaDlbEvent
+├── uuid (string)
+├── event (string)
+├── preWindow (uint32)
+├── postWindow (uint32)
+├── serviceName (string)
+├── storage_folder (string)
+├── timestamp_utc (uint64)
+├── timestamp_ptp (uint64)
+├── priority (uint32)
+├── sensor_original_ts (SensorTSHeader)
+│   └── (fields of SensorTSHeader)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+In this hierarchical tree structure, the `SoaDlbEvent` message is at the root, and each field is represented as a node. The basic types (string, uint32, uint64) are shown as leaf nodes. The `SensorTSHeader` field is a nested message, and its fields are represented by the placeholder `(fields of SensorTSHeader)`, indicating that it would have its own subtree if detailed.
+
+```
+HDMapUpdateResponse
+|-- status (int32)
+|-- message (string)
+|-- updated_segments (repeated HDMapSegment)
+    |-- id (string)
+    |-- geometry (Geometry)
+        |-- type (string)
+        |-- coordinates (repeated Coordinates)
+            |-- x (float)
+            |-- y (float)
+            |-- z (float)
+    |-- properties (Properties)
+        |-- speed_limit (float)
+        |-- lane_width (float)
+        |-- traffic_signs (repeated TrafficSign)
+            |-- type (string)
+            |-- position (Position)
+                |-- x (float)
+                |-- y (float)
+                |-- z (float)
+```
+
+This hierarchical tree structure represents the `HDMapUpdateResponse` protobuf message, showing the hierarchy and structure of each field. The tree includes basic types as leaf nodes, such as `int32`, `string`, `float`, and `repeated` fields which indicate lists of elements.
+
+Here is the hierarchical tree structure for the protobuf message 'CalibrationDlbEvent', where each node represents a field:
+
+```
+CalibrationDlbEvent
+├── string uuid
+├── string event
+├── int32 pre_window
+├── int32 post_window
+├── string file_list
+├── string storage_folder
+├── uint64 timestamp_utc
+├── uint64 timestamp_ptp
+├── uint32 priority
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `CalibrationDlbEvent`, which represents the entire message.
+- Each child node represents a field within the `CalibrationDlbEvent` message.
+- The fields are listed in the order they appear in the message definition.
+- Basic types (such as `string`, `int32`, `uint64`, etc.) are represented as leaf nodes.
+- The `SensorTSHeader sensor_original_ts` field is also a leaf node, assuming `SensorTSHeader` is a predefined message type and not further detailed here.
+
+Here is the hierarchical tree structure for the protobuf message 'CanDlbEvent', where each node represents a field:
+
+```
+CanDlbEvent
+├── string uuid
+├── string event
+├── int32 preWindow
+├── int32 postWindow
+├── string topics
+├── string storage_folder
+├── uint64 timestamp_utc
+├── uint64 timestamp_ptp
+├── uint32 priority
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `CanDlbEvent`, which represents the entire message.
+- Each child node directly under `CanDlbEvent` represents a field of the message.
+- The fields are listed in the order provided, and each field is represented by its type and name.
+- Basic types (like `string`, `int32`, `uint64`, etc.) are leaf nodes, indicating that they do not have any further nested structure.
+- The `SensorTSHeader sensor_original_ts` field is also a leaf node, assuming `SensorTSHeader` is a predefined message type that is not further detailed in this context.
+
+Here is the hierarchical tree structure for the protobuf message 'CloudHttpsAck', where each node represents a field and includes basic types as leaf nodes:
+
+```
+CloudHttpsAck
+├── request_id (string)
+├── ack_code (AckCode)
+│   └── (details of AckCode, assuming it has its own fields)
+├── sensor_original_ts (SensorTSHeader)
+│   └── (details of SensorTSHeader, assuming it has its own fields)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+In this structure:
+- `request_id`, `publisher_id` are of type `string`.
+- `publish_ptp_ts`, `counter`, `publish_ts` are of type `uint64`.
+- `ack_code` is of type `AckCode`, which would have its own fields (not detailed here).
+- `sensor_original_ts` is of type `SensorTSHeader`, which would also have its own fields (not detailed here).
+
+This tree structure provides a clear representation of the hierarchy and structure of the 'CloudHttpsAck' message.
+
+Here is the hierarchical tree structure for the protobuf message `HDMapDownloadFileResponse`:
+
+```
+HDMapDownloadFileResponse
+├── status (int32)
+├── message (string)
+└── files (repeated File)
+    ├── file_name (string)
+    ├── file_size (int64)
+    ├── file_type (string)
+    └── file_content (bytes)
+```
+
+Explanation:
+- The root node is `HDMapDownloadFileResponse`.
+- It has three direct children:
+  - `status` of type `int32`.
+  - `message` of type `string`.
+  - `files` which is a repeated field of type `File`.
+- The `File` message has four fields:
+  - `file_name` of type `string`.
+  - `file_size` of type `int64`.
+  - `file_type` of type `string`.
+  - `file_content` of type `bytes`.
+
+Here is the hierarchical tree structure for the protobuf message 'LogDlbEvent', where each node represents a field:
+
+```
+LogDlbEvent
+├── string uuid
+├── string event
+├── int32 pre_window
+├── int32 post_window
+├── string app_list
+├── string storage_folder
+├── uint64 timestamp_utc
+├── uint64 timestamp_ptp
+├── uint32 priority
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `LogDlbEvent`, which represents the entire message.
+- Each child node represents a field within the `LogDlbEvent` message.
+- The fields are listed in the order they appear in the message definition.
+- Basic types (e.g., `string`, `int32`, `uint64`, `uint32`) are represented as leaf nodes.
+- The `SensorTSHeader sensor_original_ts` field is also a leaf node, assuming `SensorTSHeader` is a predefined message type and not further detailed here.
+
+Here's a hierarchical tree structure for the protobuf message 'AppAction', where each node represents a field, and basic types are included as leaf nodes:
+
+```
+AppAction
+├── parameter
+│   └── CANCEL (string)
+└── parameters
+    └── DELETE (string)
+```
+
+Explanation:
+- The root node is 'AppAction', which is the message type.
+- Under 'AppAction', there are two fields: 'parameter' and 'parameters'.
+- The 'parameter' field has a single value 'CANCEL', which is of type string.
+- The 'parameters' field has a single value 'DELETE', which is also of type string.
+
+Here is the hierarchical tree structure for the protobuf message 'RequestParam', where each node represents a field:
+
+```
+RequestParam
+├── key (string)
+└── value (bytes)
+```
+
+In this structure:
+- The root node is `RequestParam`, which is the message type.
+- The first child node is `key`, which is of type `string`.
+- The second child node is `value`, which is of type `bytes`.
+
+This tree clearly shows the hierarchy and structure of the message, with the basic types (`string` and `bytes`) as leaf nodes.
+
+Here's the hierarchical tree structure for the `CloudHttpsRequest` protobuf message:
+
+```
+CloudHttpsRequest
+├── request_id (string)
+├── app_id (string)
+├── service_name (string)
+├── service_package (string)
+├── method_name (string)
+├── prio (Priority)
+├── timeout (int32)
+├── request_param (RequestParam)
+├── flag (uint32)
+├── sensor_original_ts (SensorTSHeader)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+In this tree structure:
+- Each node represents a field in the `CloudHttpsRequest` message.
+- Basic types (like `string`, `int32`, `uint32`, `uint64`) are represented as leaf nodes.
+- Complex types (like `Priority`, `RequestParam`, `SensorTSHeader`) are represented as nodes that could potentially have their own sub-fields, but those details are not provided here.
+
+Here is the hierarchical tree structure for the protobuf message 'DLBFileUploadResult', where each node represents a field:
+
+```
+DLBFileUploadResult
+├── string uuid
+├── FileUploadResult upload_result
+├── string type
+├── string result_reason
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `DLBFileUploadResult`, which represents the entire message.
+- Each child node represents a field within the `DLBFileUploadResult` message.
+- The fields are listed in the order provided, with their respective types indicated.
+- Basic types (such as `string` and `uint64`) are represented as leaf nodes.
+
+Below is a hierarchical tree structure representing the `MapInfoReq` protobuf message, where each node represents a field. Basic types are included as leaf nodes:
+
+```
+MapInfoReq
+├── user_id (string)
+├── map_name (string)
+├── coordinates
+│   ├── latitude (double)
+│   └── longitude (double)
+└── filters
+    ├── filter_type (enum: FilterType)
+    └── filter_value (string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `MapInfoReq` message, including the nested `coordinates` and `filters` fields with their respective basic types.
+
+Here is the hierarchical tree structure for the protobuf message 'ResultParam', where each node represents a field:
+
+```
+ResultParam
+├── key (string)
+└── value (bytes)
+```
+
+In this tree structure:
+- The root node is 'ResultParam', which is the message type.
+- The first child node is 'key', which is of type 'string'.
+- The second child node is 'value', which is of type 'bytes'.
+
+This structure clearly shows the hierarchy and the basic types of the fields within the 'ResultParam' message.
+
+Here's the hierarchical tree structure for the `CloudHttpsResponse` protobuf message:
+
+```
+CloudHttpsResponse
+├── request_id (string)
+├── cloud_result_code (HttpsResultCode)
+├── result_param (ResultParam)
+├── sensor_original_ts (SensorTSHeader)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+This tree structure represents the hierarchy of the `CloudHttpsResponse` message, where each node is a field of the message. The basic types (string and uint64) are represented as leaf nodes. The fields `cloud_result_code`, `result_param`, and `sensor_original_ts` are nested messages, which would have their own hierarchical structures if detailed further.
+
+```
+PacketDlbEvent
+├── uuid (string)
+├── event (string)
+├── preWindow (int32)
+├── postWindow (int32)
+├── topics (string)
+├── storage_folder (string)
+├── timestamp_utc (uint64)
+├── timestamp_ptp (uint64)
+├── priority (uint32)
+├── sensor_original_ts (SensorTSHeader)
+│   └── (fields of SensorTSHeader)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+In this hierarchical tree structure, the `PacketDlbEvent` message is represented with its fields as nodes. The basic types (string, int32, uint64, uint32) are shown as leaf nodes. The `SensorTSHeader` field is a nested message, and its fields are represented as children of `sensor_original_ts`. The structure clearly shows the hierarchy and organization of the fields within the `PacketDlbEvent` message.
+
+Here is the hierarchical tree structure for the protobuf message 'PicDLBProperty', where each node represents a field and includes basic types as leaf nodes:
+
+```
+PicDLBProperty
+├── pre_window (int32)
+├── post_window (int32)
+├── camera (string)
+├── datamask_conf (string)
+├── jpegEncodeWidth (uint32)
+├── jpegEncodeHeight (uint32)
+├── jpegEncodeQuality (uint32)
+├── jpegEncodeFrequency (uint32)
+└── remap (bool)
+```
+
+In this structure, the root node is 'PicDLBProperty', which is the name of the message. Each child node represents a field within the message, and the type of each field is specified in parentheses. There is no nested hierarchy within this message, as all fields are at the same level.
+
+Below is a hierarchical tree structure representing the protobuf message `PicDlbEvent`, where each node represents a field. Basic types are included as leaf nodes:
+
+```
+PicDlbEvent
+├── event_id (string)
+├── timestamp (int64)
+├── device_info
+│   ├── device_id (string)
+│   ├── device_type (string)
+│   └── firmware_version (string)
+├── event_data
+│   ├── event_type (string)
+│   ├── event_description (string)
+│   └── event_details
+│       ├── detail_key (string)
+│       └── detail_value (string)
+└── user_info
+    ├── user_id (string)
+    ├── user_name (string)
+    └── user_email (string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `PicDlbEvent` message, including nested fields within `device_info`, `event_data`, and `user_info`. Each field is represented with its basic type, making it easy to understand the composition of the message.
+
+Here is the hierarchical tree structure for the `DataFilterEventResponse` protobuf message:
+
+```
+DataFilterEventResponse
+├── DlbResponse dds_resp
+├── DlbResponse camera_resp
+├── DlbResponse lidar_resp
+├── DlbResponse log_resp
+├── string uuid
+├── DlbResponse picture_resp
+├── DlbResponse can_resp
+├── DlbResponse position_resp
+├── string type
+├── bool accepted
+├── string fail_reason
+├── DlbResponse calibration_resp
+├── DlbResponse perform_diag_resp
+├── DlbResponse network_packet_resp
+├── DlbResponse soa_resp
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this tree structure:
+- Each node represents a field in the `DataFilterEventResponse` message.
+- The basic types (`string`, `bool`, `uint64`) are represented as leaf nodes.
+- The `DlbResponse` and `SensorTSHeader` fields are also nodes, indicating that they are complex types that could have their own nested structure within the protobuf definition.
+
+Here is the hierarchical tree structure for the protobuf message `DLBMessageDownload`, where each node represents a field:
+
+```
+DLBMessageDownload
+├── command_id (uint64)
+├── app_type (string)
+├── biz_type (string)
+├── action (string)
+├── payload (string)
+├── sensor_original_ts (SensorTSHeader)
+│   └── (fields of SensorTSHeader)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+In this structure:
+- The root node is `DLBMessageDownload`, which contains all the fields listed.
+- Each field is represented as a child node of `DLBMessageDownload`.
+- The `sensor_original_ts` field is of type `SensorTSHeader`, which would have its own set of fields (not detailed here, represented as `(fields of SensorTSHeader)`).
+- All other fields are basic types (`uint64` or `string`), which are represented as leaf nodes.
+
+Here is the hierarchical tree structure for the protobuf message `DLBFileUploadResponse`, where each node represents a field:
+
+```
+DLBFileUploadResponse
+├── string uuid
+├── FileUploadState upload_state
+├── string type
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- `DLBFileUploadResponse` is the root node.
+- Each child node represents a field within the `DLBFileUploadResponse` message.
+- Basic types like `string` and `uint64` are represented as leaf nodes.
+- `FileUploadState` and `SensorTSHeader` are also represented as nodes, indicating they are complex types that could have their own nested structure in a full protobuf definition.
+
+```
+DLBMessageUploadResponse
+├── status (int32)
+├── message (string)
+└── data
+    ├── uploadId (string)
+    ├── uploadTime (int64)
+    └── fileDetails
+        ├── fileName (string)
+        ├── fileSize (int64)
+        └── fileType (string)
+```
+
+Here is the hierarchical tree structure for the protobuf message 'HDMapDownloadFile', where each node represents a field:
+
+```
+HDMapDownloadFile
+├── string uuid
+├── string result_code
+├── int64 server_time
+├── string file_path
+├── uint64 hdmap_version
+├── uint64 tile_id
+├── uint64 format_version
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `HDMapDownloadFile`, which represents the entire message.
+- Each child node represents a field within the `HDMapDownloadFile` message.
+- Basic types such as `string`, `int64`, `uint64` are represented as leaf nodes.
+- The `SensorTSHeader sensor_original_ts` field is also a leaf node, assuming `SensorTSHeader` is a predefined message type that is not further detailed in this context.
+
+Here is the hierarchical tree structure for the protobuf message `DLBMessageUpload`, where each node represents a field:
+
+```
+DLBMessageUpload
+├── string type
+├── bytes payload
+├── MessageType message_type
+├── int64 command_id
+├── string uuid
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `DLBMessageUpload`, which represents the entire message.
+- Each child node represents a field within the `DLBMessageUpload` message.
+- The fields are listed in the order they appear in the message definition.
+- Basic types (like `string`, `bytes`, `int64`, `uint64`) are represented as leaf nodes.
+- The `MessageType` and `SensorTSHeader` fields are also represented as nodes, indicating that they are potentially complex types that could have their own nested structures if defined in the protobuf schema.
+
+```
+DLBFileDownloadResponse
+|-- string file_name
+|-- int64 file_size
+|-- bytes file_content
+|-- FileMetadata metadata
+    |-- string file_type
+    |-- int64 creation_time
+    |-- int64 modification_time
+    |-- string owner
+    |-- FilePermissions permissions
+        |-- bool read
+        |-- bool write
+        |-- bool execute
+```
+
+This hierarchical tree structure represents the `DLBFileDownloadResponse` protobuf message, showing the hierarchy and structure of its fields. Each node represents a field, and basic types are included as leaf nodes. The nested structure of the message is clearly depicted, with `FileMetadata` and `FilePermissions` as nested messages within `DLBFileDownloadResponse`.
+
+```
+DLBMessageDownloadResponse
+|-- string message_id
+|-- int32 status_code
+|-- string status_message
+|-- repeated File files
+    |-- string file_name
+    |-- int64 file_size
+    |-- string file_type
+    |-- bytes file_content
+|-- Metadata metadata
+    |-- string source
+    |-- string destination
+    |-- int64 timestamp
+```
+
+This hierarchical tree structure represents the `DLBMessageDownloadResponse` protobuf message, showing the hierarchy and structure of its fields. Each node represents a field, and basic types are included as leaf nodes. The `repeated` keyword indicates that the `files` field can contain multiple `File` messages, and the `Metadata` field contains nested fields.
+
+Here is the hierarchical tree structure for the protobuf message 'EventTriggeredReq', where each node represents a field:
+
+```
+EventTriggeredReq
+├── string triggered_event
+├── string triggered_time
+├── string triggered_uuid
+├── string triggered_missionid
+├── string triggered_detail
+├── string event_type
+├── string unique_id
+├── string target_info
+├── string timestamp
+├── int32 value
+├── string target_ecu
+├── string vid
+├── SensorTSHeader sensor_original_ts
+│   └── (fields of SensorTSHeader)
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- Each `string`, `int32`, and `uint64` field is represented as a leaf node.
+- The `SensorTSHeader sensor_original_ts` field is a nested message, and its fields would be listed under it if the structure of `SensorTSHeader` were provided.
+
+Below is a hierarchical tree structure representing the `DataDesensitizationReq` protobuf message, where each node represents a field. The basic types are included as leaf nodes.
+
+```
+DataDesensitizationReq
+├── user_info
+│   ├── name (string)
+│   ├── age (int32)
+│   ├── email (string)
+│   └── address
+│       ├── street (string)
+│       ├── city (string)
+│       └── postal_code (string)
+├── financial_info
+│   ├── account_number (string)
+│   ├── balance (float)
+│   └── transactions
+│       ├── transaction_id (string)
+│       ├── amount (float)
+│       └── timestamp (int64)
+└── sensitive_info
+    ├── ssn (string)
+    ├── passport_number (string)
+    └── security_questions
+        ├── question (string)
+        └── answer (string)
+```
+
+This tree structure clearly shows the hierarchy and structure of the `DataDesensitizationReq` message, including all nested fields and their basic types.
+
+```
+RawMessage
+└── message (string)
+```
+
+```
+DataDesensitizationResp
+├── success (Desensitization_FAILED)
+└── down (Desensitization_BUSY)
+```
+
+```
+AppActionResp
+└── success (FAILED)
+```
+
+Here is the hierarchical tree structure for the protobuf message `DataDesensitizationRespAck`:
+
+```
+DataDesensitizationRespAck
+├── string uuid
+├── SensorTSHeader sensor_original_ts
+│   └── (fields of SensorTSHeader, not specified in the prompt)
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this tree structure:
+- The root node is `DataDesensitizationRespAck`, which represents the entire message.
+- Directly under the root node, there are six fields:
+  - `string uuid`
+  - `SensorTSHeader sensor_original_ts`
+  - `uint64 publish_ptp_ts`
+  - `string publisher_id`
+  - `uint64 counter`
+  - `uint64 publish_ts`
+- The `SensorTSHeader sensor_original_ts` field is a nested message type, and its structure is not detailed in the prompt. Therefore, it is represented as a placeholder with its own fields not specified.
+
+Here is the hierarchical tree structure for the protobuf message 'DLBFileProperty', where each node represents a field and includes basic types as leaf nodes:
+
+```
+DLBFileProperty
+├── file_type (string)
+├── sub_type (string)
+├── file_paths (string)
+├── version (string)
+└── md5 (string)
+```
+
+In this structure:
+- The root node is `DLBFileProperty`, which represents the message itself.
+- Each child node represents a field within the `DLBFileProperty` message.
+- The leaf nodes indicate the basic types of each field, all of which are `string` in this case.
+
+```
+DLBFileDownload
+├── command_id (uint64)
+├── app_type (string)
+├── biz_type (string)
+├── action (string)
+├── payload (string)
+├── file_property (DLBFileProperty)
+│   ├── field1 (type1)
+│   ├── field2 (type2)
+│   └── ...
+├── sensor_original_ts (SensorTSHeader)
+│   ├── field1 (type1)
+│   ├── field2 (type2)
+│   └── ...
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+
+Note: The fields within `DLBFileProperty` and `SensorTSHeader` are represented as `field1`, `field2`, etc., and their types as `type1`, `type2`, etc., because the specific fields and their types are not provided in the question. Replace these placeholders with the actual fields and their types as defined in your protobuf schema.
+
+Here is the hierarchical tree structure for the protobuf message 'LidarDLBProperty', where each node represents a field and includes basic types as leaf nodes:
+
+```
+LidarDLBProperty
+├── pre_window (int32)
+├── post_window (int32)
+├── lidar_topic (string)
+├── datamask_conf (string)
+└── need_serialize (bool)
+```
+
+In this structure:
+- The root node is `LidarDLBProperty`, which represents the entire message.
+- Directly under the root node, there are five child nodes, each representing a field of the message:
+  - `pre_window` of type `int32`
+  - `post_window` of type `int32`
+  - `lidar_topic` of type `string`
+  - `datamask_conf` of type `string`
+  - `need_serialize` of type `bool`
+
+This tree clearly shows the hierarchy and structure of the message, with each field represented as a node and its type indicated at the leaf level.
+
+Below is a hierarchical tree structure representing the protobuf message `LidarDlbEvent`. Each node in the tree corresponds to a field in the message, and the structure shows the hierarchy and relationships between these fields. Basic types are represented as leaf nodes.
+
+```
+LidarDlbEvent
+├── timestamp (uint64)
+├── sensor_id (string)
+├── event_type (string)
+├── event_data
+│   ├── position
+│   │   ├── x (float)
+│   │   ├── y (float)
+│   │   └── z (float)
+│   ├── velocity
+│   │   ├── vx (float)
+│   │   ├── vy (float)
+│   │   └── vz (float)
+│   ├── intensity (float)
+│   └── confidence (float)
+└── metadata
+    ├── source (string)
+    ├── version (string)
+    └── flags
+        ├── flag1 (bool)
+        ├── flag2 (bool)
+        └── flag3 (bool)
+```
+
+This tree structure clearly illustrates the hierarchy of the `LidarDlbEvent` message, showing how each field is nested within the message and its sub-messages.
+
+Here is the hierarchical tree structure for the protobuf message `DataDesensitizationReqAck`:
+
+```
+DataDesensitizationReqAck
+├── accept: Desensitization_REJECTED (enum)
+└── busy: Desensitization_FAILED (enum)
+```
+
+In this tree structure:
+- The root node is `DataDesensitizationReqAck`, which represents the message itself.
+- It has two child nodes, each representing a field of the message:
+  - `accept` with the type `Desensitization_REJECTED` (which is an enum).
+  - `busy` with the type `Desensitization_FAILED` (which is also an enum).
+
+This structure clearly shows the hierarchy and the basic types (enums in this case) as leaf nodes.
+
+Here is the hierarchical tree structure for the protobuf message 'PositionDlbEvent', where each node represents a field:
+
+```
+PositionDlbEvent
+├── string uuid
+├── string event
+├── int32 preWindow
+├── int32 postWindow
+├── string topics
+├── string storage_folder
+├── uint64 timestamp_utc
+├── uint64 timestamp_ptp
+├── uint32 priority
+├── SensorTSHeader sensor_original_ts
+├── uint64 publish_ptp_ts
+├── string publisher_id
+├── uint64 counter
+└── uint64 publish_ts
+```
+
+In this structure:
+- The root node is `PositionDlbEvent`, which is the message type.
+- Each child node represents a field within the `PositionDlbEvent` message.
+- The fields are listed in the order they appear in the message definition.
+- Basic types (e.g., `string`, `int32`, `uint64`, `uint32`) are represented as leaf nodes.
+- The `SensorTSHeader sensor_original_ts` field is also a leaf node, assuming `SensorTSHeader` is a predefined message type that is not further detailed in this context.
+

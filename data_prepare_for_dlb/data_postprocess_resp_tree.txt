@@ -1,0 +1,35 @@
+```
+DataPostprocessResp
+├── status: Status
+│   ├── code: int32
+│   ├── message: string
+│   └── details: Details
+│       ├── id: int64
+│       ├── description: string
+│       └── timestamp: google.protobuf.Timestamp
+│           ├── seconds: int64
+│           └── nanos: int32
+├── result: Result
+│   ├── data: Data
+│   │   ├── id: int64
+│   │   ├── name: string
+│   │   └── value: float
+│   └── metadata: Metadata
+│       ├── version: string
+│       └── tags: repeated string
+└── errors: repeated Error
+    ├── code: int32
+    ├── message: string
+    └── trace: string
+```
+
+```
+ProcessResult
+├── event_uuid (string)
+├── output (string)
+├── result (PostprocessState)
+│   └── (fields of PostprocessState)
+├── fail_reason (string)
+└── err_code (uint32)
+```
+

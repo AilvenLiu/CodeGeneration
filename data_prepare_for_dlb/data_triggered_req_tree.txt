@@ -1,0 +1,14 @@
+```
+DataTriggeredReq
+├── flag (bool)
+├── triggered_event (string)
+├── uuid_num (string)
+├── trigger_payload (string)
+├── sensor_original_ts (SensorTSHeader)
+│   └── (fields of SensorTSHeader)
+├── publish_ptp_ts (uint64)
+├── publisher_id (string)
+├── counter (uint64)
+└── publish_ts (uint64)
+```
+

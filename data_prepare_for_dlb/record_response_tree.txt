@@ -1,0 +1,21 @@
+```
+DlbResponse
+├── req_uuid: string
+├── req_event: string
+├── dlb_state: DlbState
+├── key: string
+├── recorder_timestamp_utc: uint64
+├── recorder_timestamp_ptp: uint64
+├── file_name: string
+├── fail_reason: string
+├── picture_number: uint64
+├── recorder_type: string
+├── file_duration: uint32
+├── error_code: uint32
+├── sensor_original_ts: SensorTSHeader
+├── publish_ptp_ts: uint64
+├── publisher_id: string
+├── counter: uint64
+└── publish_ts: uint64
+```
+
