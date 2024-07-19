@@ -1,0 +1,7 @@
+syntax = "proto2";
+package nio.ad.messages;
+
+
+message RawMessage{
+  repeated string message = 1;
+}
